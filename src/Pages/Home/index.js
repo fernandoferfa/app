@@ -3,6 +3,11 @@ import {
     MainContainer,
     CriterionsContainer,
     TitleCriterionsContainer,
+    ThemesList,
+    ThemeItem,
+    ThemeName,
+    ThemeInput,
+    ThemeInputCheckbox,
     CriterionsList,
     CriterionItem,
     CriterionTitle,
@@ -10,6 +15,9 @@ import {
     RemoveButton,
     CountValue,
     AddButton,
+    ContainerSumAllCountValues,
+    SumAllCountValuesTitle,
+    SumAllCountValues,
     CleanAllCountValues,
 } from './styles';
 
@@ -17,62 +25,86 @@ function Home() {
     const [criterions, setCriterions] = useState([
         {
             id: 1,
-            name: 'critério 1',
-            value: 0
+            name: 'ortografia',
+            value: 0,
+            recurrent: false,
         },
         {
             id: 2,
-            name: 'critério 2',
-            value: 0
+            name: 'acentuação',
+            value: 0,
+            recurrent: false,
         },
         {
             id: 3,
-            name: 'critério 3',
-            value: 0
+            name: 'pontuação',
+            value: 0,
+            recurrent: false,
         },
         {
             id: 4,
-            name: 'critério 4',
-            value: 0
+            name: 'concordância',
+            value: 0,
+            recurrent: false,
         },
         {
             id: 5,
-            name: 'critério 5',
-            value: 0
+            name: 'crase',
+            value: 0,
+            recurrent: false,
         },
         {
             id: 6,
-            name: 'critério 6',
-            value: 0
+            name: 'construção frasal',
+            value: 0,
+            recurrent: false,
         },
         {
             id: 7,
-            name: 'critério 7',
-            value: 0
+            name: 'precisão lexical',
+            value: 0,
+            recurrent: false,
         },
         {
             id: 8,
-            name: 'critério 8',
-            value: 0
+            name: 'informalidade',
+            value: 0,
+            recurrent: false,
         },
         {
             id: 9,
-            name: 'critério 9',
-            value: 0
+            name: 'regência',
+            value: 0,
+            recurrent: false,
         },
         {
             id: 10,
-            name: 'critério 10',
-            value: 0
+            name: 'segmentação',
+            value: 0,
+            recurrent: false,
         },
     ]);
+
+    const themes = [
+        {
+            name: 'Tema  1'
+        },
+        {
+            name: 'Tema  2'
+        },
+        {
+            name: 'Tema  3'
+        },
+    ];
 
     const addValue = (event) => {
         const newCriterions = criterions.map((criterion) => {
             if (criterion.id === parseInt(event.target.value)) {
+                if(criterion.value === 4) {
+                    return { ...criterion, value: criterion.value += 1, recurrent: true };
+                }
                 return { ...criterion, value: criterion.value += 1 };
             } else {
-
                 return { ...criterion, value: criterion.value = criterion.value };
             }
         }
@@ -83,6 +115,9 @@ function Home() {
     const removeValue = (event) => {
         const newCriterions = criterions.map((criterion) => {
             if (criterion.id === parseInt(event.target.value) && criterion.value > 0) {
+                if(criterion.value === 5) {
+                    return { ...criterion, value: criterion.value -= 1, recurrent: false };
+                }
                 return { ...criterion, value: criterion.value -= 1 };
             } else {
 
@@ -95,7 +130,7 @@ function Home() {
 
     const removeAllValue = () => {
         const newCriterions = criterions.map((criterion) => {
-            return { ...criterion, value: criterion.value = 0 };
+            return { ...criterion, value: criterion.value = 0, recurrent: false };
         });
         setCriterions(newCriterions);
     }
@@ -105,11 +140,22 @@ function Home() {
                 <TitleCriterionsContainer>
                     Critérios de avaliação
                 </TitleCriterionsContainer>
+                <ThemesList>
+                    {
+                        themes.map(() =>
+
+                            <ThemeItem>
+                                <ThemeInput />
+                                <ThemeInputCheckbox type="checkbox"/>
+                            </ThemeItem>
+                        )
+                    }
+                </ThemesList>
                 <CriterionsList>
                     {
                         criterions.map((criterion) =>
                             <CriterionItem>
-                                <CriterionTitle>
+                                <CriterionTitle recurrent={criterion.recurrent}>
                                     {criterion.name}
                                 </CriterionTitle>
                                 <Criterion>
@@ -127,6 +173,14 @@ function Home() {
                         )
                     }
                 </CriterionsList>
+                <ContainerSumAllCountValues>
+                    <SumAllCountValuesTitle>Total:</SumAllCountValuesTitle>
+                    <SumAllCountValues>
+                        {
+                            criterions.reduce((acc, cc) => acc + cc.value, 0)
+                        }
+                    </SumAllCountValues>
+                </ContainerSumAllCountValues>
                 <CleanAllCountValues onClick={removeAllValue}>
                     Limpar tudo
                 </CleanAllCountValues>

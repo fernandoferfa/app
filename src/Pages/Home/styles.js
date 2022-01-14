@@ -13,10 +13,47 @@ export const CriterionsContainer = styled.div`
 `;
 
 export const TitleCriterionsContainer = styled.h1`
-    font-size: 30px;
+    font-size: 16px;
     margin: 0px;
     margin-top:4px;
     text-align: center; 
+`;
+
+export const ThemesList = styled.ul`
+    margin: 10px auto 0;
+    padding: 0;
+    width: 260px;
+`;
+
+export const ThemeItem = styled.li`
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    margin: 6px 0;
+    width: 100%;
+`;
+
+export const ThemeName = styled.p`
+
+`;
+
+export const ThemeInput = styled.input`
+    border: none;
+    border: 2px solid;
+    border-radius: 5px;
+    padding: 4px 6px;
+    width: 200px;
+`;
+
+export const ThemeInputCheckbox = styled.input`
+    
+    -ms-transform: scale(2); /* IE */
+    -moz-transform: scale(2); /* FF */
+    -webkit-transform: scale(2); /* Safari and Chrome */
+    -o-transform: scale(2); /* Opera */
+    transform: scale(2);
+    padding: 10px;
 `;
 
 export const CriterionsList = styled.ul`
@@ -29,15 +66,13 @@ export const CriterionItem = styled.li`
     border-bottom: 1px solid;
     display: flex;
     justify-content: space-between;
-    padding: 14px 0;
+    padding: 4px 0;
     width: 260px;
-    &:nth-child(10) {
-        border-bottom: 0px;
-    }
 `;
 
 export const CriterionTitle = styled.p`
-    
+    color: ${props => props.recurrent ? 'red': 'black'};
+    font-size: 14px;
 `;
 
 export const Criterion = styled.li`
@@ -45,7 +80,7 @@ export const Criterion = styled.li`
     display: flex;
     height: 50px;
     justify-content: space-between;
-    width: 140px;
+    width: 115px;
 `;
 
 export const RemoveButton = styled.button`
@@ -54,8 +89,8 @@ export const RemoveButton = styled.button`
     border-radius: 5px;
     color: white;
     font-weight: bold;
-    height: 35px;
-    width: 35px;
+    height: 28px;
+    width: 28px;
 `;
 
 export const AddButton = styled.button`
@@ -64,14 +99,28 @@ export const AddButton = styled.button`
     border-radius: 5px;
     color: white;
     font-weight: bold;
-    height: 35px;
-    width: 35px;
+    height: 28px;
+    width: 28px;
 `;
 
 export const CountValue = styled.p`
-    font-size: 22px;
+    font-size: 16px;
     text-align: center;
     width: 50px;
+`;
+
+export const ContainerSumAllCountValues = styled.div`
+    display: flex;
+    margin: 0 auto;
+    width: 260px;
+`;
+
+export const SumAllCountValuesTitle = styled.p`
+    margin-right: 12px
+`;
+
+export const SumAllCountValues = styled.p`
+    
 `;
 
 
@@ -79,10 +128,10 @@ export const CleanAllCountValues = styled.button`
     background-color: #ffb612;
     border: none;
     border-radius: 5px;
-    font-size: 18px;
+    font-size: 12px;
     font-weight: bold;
     display: block;
     margin: 24px auto;
-    padding: 12px;
+    padding: 8px;
     width: 314px;
 `;
