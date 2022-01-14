@@ -20,6 +20,7 @@ import {
     SumAllCountValues,
     CleanAllCountValues,
 } from './styles';
+import Nu from '../../assets/images/nu.jpeg';
 
 function Home() {
     const [criterions, setCriterions] = useState([
@@ -83,6 +84,12 @@ function Home() {
             value: 0,
             recurrent: false,
         },
+        {
+            id: 11,
+            name: 'graves',
+            value: 0,
+            recurrent: false,
+        },
     ]);
 
     const themes = [
@@ -136,7 +143,9 @@ function Home() {
     }
     return (
         <MainContainer>
-            <CriterionsContainer>
+            {
+                criterions.reduce((acc, cc) => acc + cc.value, 0) < 69 &&
+                <CriterionsContainer>
                 <TitleCriterionsContainer>
                     Critérios de avaliação
                 </TitleCriterionsContainer>
@@ -185,6 +194,11 @@ function Home() {
                     Limpar tudo
                 </CleanAllCountValues>
             </CriterionsContainer>
+            }
+            {
+                 criterions.reduce((acc, cc) => acc + cc.value, 0) === 69 &&   
+                <img src={Nu} />
+            }
         </MainContainer>
     );
 }
