@@ -153,7 +153,7 @@ function Home() {
 
   const addValue = async (event) => {
     const total = criterions.reduce((acc, cc) => acc + cc.value, 0);
-    if (total === 3) {
+    if (total === 68) {
       setShowNude(true);
       console.log('certo');
       try {
