@@ -131,6 +131,9 @@ export function DayWithPedrinho() {
     if (dayOfWeekStartDateWith === 0) {
       subtractNumberOfDays = 1;
       numberOfWeek = Math.floor((diffDays - subtractNumberOfDays) / 7) + 1;
+    } else if (diffDays === 8 - dayOfWeekStartDateWith) {
+      subtractNumberOfDays = 0;
+      numberOfWeek = 1;
     } else if (dayOfWeekStartDateWith === 1) {
       subtractNumberOfDays = 0;
       numberOfWeek = Math.floor((diffDays - subtractNumberOfDays) / 7);
@@ -139,7 +142,7 @@ export function DayWithPedrinho() {
       numberOfWeek = 0;
     } else {
       subtractNumberOfDays = 8 - dayOfWeekStartDateWith;
-      numberOfWeek = Math.floor((diffDays - subtractNumberOfDays) / 7);
+      numberOfWeek = Math.floor((diffDays - subtractNumberOfDays) / 7) + 1;
     }
 
     dayCalculatorWithPedrinho(
@@ -147,6 +150,12 @@ export function DayWithPedrinho() {
       dayOfWeekConsultDateWith,
       numberOfWeek
     );
+
+    console.log({
+      diffDays,
+      subtractNumberOfDays,
+      numberOfWeek,
+    });
   };
 
   return (
