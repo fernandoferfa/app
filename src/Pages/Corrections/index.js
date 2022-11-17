@@ -151,19 +151,16 @@ export function Corrections() {
     });
     localStorage.setItem('themes', JSON.stringify(newThemes));
     setThemes(newThemes);
-    console.log({ name: event.target.name });
   };
 
   const addValue = async (event) => {
     const total = criterions.reduce((acc, cc) => acc + cc.value, 0);
     if (total === 68) {
       setShowNude(true);
-      console.log('certo');
+
       try {
         await addCountAttempt();
-      } catch (error) {
-        console.log('deu ruim');
-      }
+      } catch (error) {}
     }
 
     const newCriterions = criterions.map((criterion) => {

@@ -16,7 +16,5 @@ export const addCountAttempt = async () => {
     await addDoc(collection(db, 'fabi'), {
       exactHour: new Date().toString(),
     });
-  } catch (error) {
-    console.log({ error });
-  }
+  } catch (error) {}
 };

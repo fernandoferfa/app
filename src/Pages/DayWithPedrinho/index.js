@@ -150,12 +150,6 @@ export function DayWithPedrinho() {
       dayOfWeekConsultDateWith,
       numberOfWeek
     );
-
-    console.log({
-      diffDays,
-      subtractNumberOfDays,
-      numberOfWeek,
-    });
   };
 
   return (
