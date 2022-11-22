@@ -7,9 +7,13 @@ export const CriterionsContainer = styled.div`
   border-radius: 8px;
   border: 1px solid #d9d9d9;
   margin: 12px auto;
-
   padding: 8px 16px;
   width: 314px;
+
+  @media (max-width: 400px) {
+    border: none;
+    padding: 4px 8px;
+  }
 `;
 
 export const TitleCriterionsContainer = styled.h1`
@@ -17,12 +21,21 @@ export const TitleCriterionsContainer = styled.h1`
   margin: 0px;
   margin-top: 4px;
   text-align: center;
+
+  @media (max-width: 400px) {
+    font-size: 14px;
+    margin-top: 0px;
+  }
 `;
 
 export const ThemesList = styled.ul`
   margin: 10px auto 0;
   padding: 0;
   width: 260px;
+
+  @media (max-width: 400px) {
+    margin-bottom: 20px;
+  }
 `;
 
 export const ThemeItem = styled.li`
@@ -32,16 +45,25 @@ export const ThemeItem = styled.li`
   list-style: none;
   margin: 6px 0;
   width: 100%;
+
+  @media (max-width: 400px) {
+    justify-content: flex-start;
+  }
 `;
 
 export const ThemeName = styled.p``;
 
 export const ThemeInput = styled.input`
   border: none;
-  border: 2px solid;
-  border-radius: 5px;
+  border: 1px solid;
+  border-radius: 4px;
   padding: 4px 6px;
   width: 200px;
+
+  @media (max-width: 400px) {
+    margin-right: 8px;
+    padding: 2px 3px;
+  }
 `;
 
 export const ThemeInputCheckbox = styled.input`
@@ -51,6 +73,14 @@ export const ThemeInputCheckbox = styled.input`
   -o-transform: scale(2); /* Opera */
   transform: scale(2);
   padding: 10px;
+
+  @media (max-width: 400px) {
+    -ms-transform: scale(1.5); /* IE */
+    -moz-transform: scale(1.5); /* FF */
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+    -o-transform: scale(1.5); /* Opera */
+    transform: scale(1.5);
+  }
 `;
 
 export const CriterionsList = styled.ul`
@@ -60,16 +90,25 @@ export const CriterionsList = styled.ul`
 `;
 
 export const CriterionItem = styled.li`
+  align-items: center;
   border-bottom: 1px solid;
   display: flex;
   justify-content: space-between;
   padding: 4px 0;
   width: 260px;
+
+  @media (max-width: 400px) {
+    padding: 0px 0;
+  }
 `;
 
 export const CriterionTitle = styled.p`
   color: ${(props) => (props.recurrent ? 'red' : 'black')};
   font-size: 14px;
+
+  @media (max-width: 400px) {
+    margin: 10px 0;
+  }
 `;
 
 export const Criterion = styled.li`
@@ -78,6 +117,12 @@ export const Criterion = styled.li`
   height: 50px;
   justify-content: space-between;
   width: 115px;
+
+  @media (max-width: 400px) {
+    height: 30px;
+    padding: 0px 0;
+    width: 90px;
+  }
 `;
 
 export const RemoveButton = styled.button`
@@ -88,6 +133,11 @@ export const RemoveButton = styled.button`
   font-weight: bold;
   height: 28px;
   width: 28px;
+
+  @media (max-width: 400px) {
+    height: 20px;
+    width: 20px;
+  }
 `;
 
 export const AddButton = styled.button`
@@ -98,10 +148,15 @@ export const AddButton = styled.button`
   font-weight: bold;
   height: 28px;
   width: 28px;
+
+  @media (max-width: 400px) {
+    height: 20px;
+    width: 20px;
+  }
 `;
 
 export const CountValue = styled.p`
-  font-size: 16px;
+  font-size: 14px;
   text-align: center;
   width: 50px;
 `;
@@ -114,9 +169,17 @@ export const ContainerSumAllCountValues = styled.div`
 
 export const SumAllCountValuesTitle = styled.p`
   margin-right: 12px;
+
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
 `;
 
-export const SumAllCountValues = styled.p``;
+export const SumAllCountValues = styled.p`
+  @media (max-width: 400px) {
+    font-size: 14px;
+  }
+`;
 
 export const CleanAllCountValues = styled.button`
   background-color: #ffb612;
@@ -133,6 +196,10 @@ export const CleanAllCountValues = styled.button`
   &:hover {
     cursor: pointer;
     filter: brightness(0.8);
+  }
+
+  @media (max-width: 400px) {
+    width: 260px;
   }
 `;
 
