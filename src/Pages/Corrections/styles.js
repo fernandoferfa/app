@@ -199,6 +199,7 @@ export const CleanAllCountValues = styled.button`
   }
 
   @media (max-width: 400px) {
+    margin: 10px auto;
     width: 260px;
   }
 `;
