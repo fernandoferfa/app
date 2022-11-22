@@ -45,10 +45,6 @@ export const ThemeItem = styled.li`
   list-style: none;
   margin: 6px 0;
   width: 100%;
-
-  @media (max-width: 400px) {
-    justify-content: flex-start;
-  }
 `;
 
 export const ThemeName = styled.p``;
@@ -63,6 +59,7 @@ export const ThemeInput = styled.input`
   @media (max-width: 400px) {
     margin-right: 8px;
     padding: 2px 3px;
+    width: 100%;
   }
 `;
 
