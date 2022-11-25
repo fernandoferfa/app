@@ -210,10 +210,10 @@ export const NudeImageContainer = styled.div`
 
 export const BtnsNavigation = styled.div`
   align-items: center;
-  text-decoration: none;
   display: flex;
   flex-direction: column;
   margin-top: 80px;
+  text-decoration: none;
   width: 100%;
 `;
 
@@ -225,8 +225,8 @@ export const HomeButton = styled(Link)`
   margin-bottom: 16px;
   padding: 10px;
   text-align: center;
-  width: 90%;
   transition: filter 0.3s;
+  width: 90%;
 
   &:hover {
     cursor: pointer;

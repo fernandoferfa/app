@@ -207,7 +207,7 @@ export function Corrections() {
       return { ...criterion, value: (criterion.value = 0), recurrent: false };
     });
     const newThemes = themes.map((theme) => {
-      return { ...theme, value: (theme.value = ''), checked: false };
+      return { ...theme, checked: false };
     });
     setThemes(newThemes);
     setCriterions(newCriterions);
