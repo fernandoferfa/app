@@ -54,7 +54,7 @@ export function Corrections() {
   const [criterions, setCriterions] = useState([
     {
       id: 1,
-      name: 'ortografi',
+      name: 'ortografia',
       value: 0,
       recurrent: false,
     },
