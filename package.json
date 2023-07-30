@@ -1,7 +1,7 @@
 {
   "name": "fabi-project",
   "version": "0.1.0",
-  "homepage": "https://fabianasouzapage.github.io/react-gh-pages",
+  "homepage": "https://fernandoferfa.github.io/",
   "private": true,
   "dependencies": {
     "@react-firebase/database": "^0.3.11",
